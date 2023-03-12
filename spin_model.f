@@ -23,7 +23,7 @@ C     READ INPUT FILE
 
       INTEGER N,z
       REAL*8 TEMP
-      REAL*8 pvalues(1:7)
+      REAL*8 pvalues(1:1)
       INTEGER C
       INTEGER NSEEDS
       INTEGER SC
@@ -712,10 +712,10 @@ C     S_SET AND GRAPH DEFINED BY NBR AND JJ
                   sum = sum + JJ(i)%V(k)*S_SET(m,NBR(i)%V(k))
             ENDDO
             
-            L = L + LOG(0.5d0*(1 + S_SET(m,i)*EXP(TEMP*sum)))
+            L = L + LOG(0.5d0*(1 + S_SET(m,i)*TANH(sum/TEMP)))
             sum = 0.0d0
       ENDDO
-      PSEUDO = PSEUDO + L
+      PSEUDO = PSEUDO + L/C
       L = 0.0d0
       ENDDO
 

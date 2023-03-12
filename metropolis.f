@@ -56,7 +56,7 @@ C-------------------------------------------------------------
 C-------------------------------------------------------------
 C     NUMBER OF p VALUES TO SIMULATE
       INTEGER npvalues, np
-      REAL*8, DIMENSION(1:7):: pvalues
+      REAL*8, DIMENSION(1:1):: pvalues
 C-------------------------------------------------------------
 C     (DUMMY VARIABLES)
       INTEGER TAU
@@ -71,7 +71,7 @@ C-----------------------------------------------------------------------
 C     READ SIMULATION VARIABLES FROM INPUT FILE
       CALL READ_INPUT(N,z,TEMP,pvalues,C,NSEEDS,SC,zip_size,TAU)
       M = z*N/2
-      MCTOT = 3*C*SC/2
+      MCTOT = 3*C*SC/4
       MCINI = MCTOT/3
 C     ALLOCATION 
       ALLOCATE(decimal1(1:N/zip_size))

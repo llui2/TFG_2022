@@ -63,7 +63,7 @@ C     FICTICIOUS TEMPERATURE (TEMP_F = k_B·TF)
 C-------------------------------------------------------------
 C     NUMBER OF p VALUES TO SIMULATE
       INTEGER npvalues, np
-      REAL*8 pvalues(1:7)
+      REAL*8 pvalues(1:1)
 C-------------------------------------------------------------
       CHARACTER(4) str
       CHARACTER(3) str1, str2
@@ -141,7 +141,7 @@ C     INITIAL FICTICIOUS TEMPERATURE
       TF_STEP = TEMP_F/(TAU)
       
 C     INITIAL RANDOM SYSTEM
-      CALL init_genrand(999)
+      CALL init_genrand(seed)
 
 C     INITIAL RANDOM SYSTEM
       call IRS(N,M,p,NBR,INBR,JJ)
